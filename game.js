@@ -38,11 +38,14 @@ function put_round() {
 	$(x[index]).attr("class", "round")
 	
 	if (check_win(2)) {
+		
 		setTimeout(function() {
 
 			alert("You Lose")
 			console.log("Rounds Winners")
 		}, 100)
+
+		return
 	}
 
 	clickable = true
@@ -72,6 +75,7 @@ $("td").click(function() {
 				alert("You Won")
 				console.log("Crosses Winners")
 			}, 100)
+
 
 		} else if (available.length > 0) {
 

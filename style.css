@@ -31,4 +31,10 @@ table {
 	top: 20px;
 	width: 100px;
 	height: 40px;
+	font-family: "Open Sans";
+}
+
+p {
+	font-family: "Open Sans";
+	font-size: 16pt;
 }
