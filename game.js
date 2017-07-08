@@ -37,13 +37,13 @@ function put_round() {
 	x = document.getElementsByTagName("td")
 	$(x[index]).attr("class", "round")
 	
-	setTimeout(function() {
-		if (check_win(2)) {
+	if (check_win(2)) {
+		setTimeout(function() {
 
 			alert("You Lose")
 			console.log("Rounds Winners")
-		}
-	}, 100)
+		}, 100)
+	}
 
 	clickable = true
 }
