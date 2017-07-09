@@ -56,6 +56,10 @@ table {
 	color:#FFFFFF;
 }
 
+.hidden {
+	opacity: 0;
+}
+
 body {
 	background-image: url("back.jpg");
 	background-repeat: no-repeat;
