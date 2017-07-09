@@ -25,12 +25,12 @@ table {
 	background-image: url("round.png");
 }
 
-.btn {
-	position: relative;
-	top: 20px;
-	width: 100px;
-	height: 40px;
-	font-family: "Arial";
+.btn_hover {
+	opacity: 0.5;
+}
+
+.btn_blur {
+	opacity: 1;
 }
 
 .hidden {

@@ -161,6 +161,7 @@ $("td").mouseenter(function() {
 	}
 }) 
 
+
 $("td").mouseleave(function() {
 	
 	if (!clickable) {
@@ -177,11 +178,30 @@ $("td").mouseleave(function() {
 
 }) 
 
-$("button").click(function() {
+$("img").mouseenter(function() {
+
+	if ($(this).attr("id") == "12") {
+		$(this).attr("class", "btn_hover")
+	}	
+
+})
+
+$("img").mouseleave(function() {
+
+	if ($(this).attr("id") == "12") {
+		$(this).attr("class", "btn_blur")
+	}	
+
+})
+
+$("img").click(function() {
 	
-	$("td").attr("class", "clear")
-	clickable = true
-	array = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ]
-	available = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	if ($(this).attr("id") == "12" && clickable) {
+
+		$("td").attr("class", "clear")
+		clickable = true
+		array = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ]
+		available = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+	}
 
 })
