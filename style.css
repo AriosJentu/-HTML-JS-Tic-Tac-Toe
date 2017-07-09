@@ -57,7 +57,9 @@ table {
 }
 
 .hidden {
-	opacity: 0;
+	position: relative;
+	top: 20pt;
+	opacity: 0.02;
 }
 
 body {

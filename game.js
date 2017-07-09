@@ -4,7 +4,7 @@ available = [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
 function check_win(id) {
 
-	a = array
+	let a = array
 
 	if (
 		(a[0][0] == id && a[0][0] == a[0][1] && a[0][1] == a[0][2]) ||
@@ -26,12 +26,39 @@ function check_win(id) {
 
 function put_round() {
 
-	index = available[Math.floor(Math.random()*available.length)]
+	column = -1
+	row = -1
 
-	column = Math.floor( index / 3)
-	row = index-3*column
+	for (i in available) {
+		
+		clm = Math.floor(available[i]/3)
+		rw = available[i] - 3*clm
+
+		array[clm][rw] = 1
+
+		if (check_win(1)) {
+			column = clm
+			row = rw
+		}
+
+		array[clm][rw] = 0
+
+		if (column >= 0) {
+			break
+		}
+	}
+
+	if (column == -1) {
+
+		index = available[Math.floor(Math.random()*available.length)]
+
+		column = Math.floor( index / 3)
+		row = index-3*column
+	}
 	
 	array[column][row] = 2
+	index = column*3 + row
+
 	available.splice(available.indexOf(index), 1)
 
 	x = document.getElementsByTagName("td")
@@ -43,6 +70,7 @@ function put_round() {
 
 			alert("You Lose")
 			console.log("Rounds Winners")
+
 		}, 100)
 
 		return
@@ -72,8 +100,10 @@ $("td").click(function() {
 		if (check_win(1)) {
 
 			setTimeout(function() {
+
 				alert("You Won")
 				console.log("Crosses Winners")
+
 			}, 100)
 
 
@@ -84,8 +114,10 @@ $("td").click(function() {
 		} else {
 
 			setTimeout(function() {
+				
 				alert("No Sides")
 				console.log("No Sides")
+				
 			}, 100)
 
 		}
