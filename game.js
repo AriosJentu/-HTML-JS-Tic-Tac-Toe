@@ -35,8 +35,8 @@ function put_round() {
 		rw = available[i] - 3*clm
 
 		array[clm][rw] = 1
-
 		if (check_win(1)) {
+
 			column = clm
 			row = rw
 		}
@@ -44,6 +44,27 @@ function put_round() {
 		array[clm][rw] = 0
 
 		if (column >= 0) {
+			break
+		}
+	}
+
+	r_winner = -1
+	for (i in available) {
+		
+		clm = Math.floor(available[i]/3)
+		rw = available[i] - 3*clm
+
+		array[clm][rw] = 2
+		if (check_win(2)) {
+
+			column = clm
+			row = rw
+			r_winner = 1
+		}
+
+		array[clm][rw] = 0
+
+		if (r_winner == 1) {
 			break
 		}
 	}
@@ -114,10 +135,10 @@ $("td").click(function() {
 		} else {
 
 			setTimeout(function() {
-				
+
 				alert("No Sides")
 				console.log("No Sides")
-				
+
 			}, 100)
 
 		}
