@@ -94,12 +94,15 @@ function put_round() {
 
 		}, 100)
 
+		can_restart = true
+		return
 	}
-	
+
 	clickable = true
 
 }
 
+can_restart = true
 $("td").click(function() {
 
 	if (!clickable) {
@@ -117,6 +120,7 @@ $("td").click(function() {
 		$(this).attr("class", "cross")
 		
 		clickable = false
+		can_restart = false
 
 		if (check_win(1)) {
 
@@ -125,7 +129,7 @@ $("td").click(function() {
 				alert("You Won")
 				console.log("Crosses Winners")
 
-				clickable = true
+				can_restart = true
 
 			}, 100)
 
@@ -141,7 +145,7 @@ $("td").click(function() {
 				alert("No Sides")
 				console.log("No Sides")
 
-				clickable = true
+				can_restart = true
 
 			}, 100)
 
@@ -200,7 +204,7 @@ $("img").mouseleave(function() {
 
 $("img").click(function() {
 	
-	if ($(this).attr("id") == "12" && clickable) {
+	if ($(this).attr("id") == "12" && can_restart) {
 
 		$("td").attr("class", "clear")
 		clickable = true
