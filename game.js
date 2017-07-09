@@ -124,6 +124,8 @@ $("td").click(function() {
 
 				alert("You Won")
 				console.log("Crosses Winners")
+				
+				clickable = true
 
 			}, 100)
 
@@ -138,6 +140,8 @@ $("td").click(function() {
 
 				alert("No Sides")
 				console.log("No Sides")
+				
+				clickable = true
 
 			}, 100)
 
