@@ -1,17 +1,25 @@
+@font-face {
+	font-family: doomr;
+	src: url("doomr.ttf");
+}
+@font-face {
+	font-family: dooml;
+	src: url("dooml.ttf");
+}
+
 tr, td {
-	width: 60px;
-	height: 60px;
+	width: 98px;
+	height: 99px;
 }
 
 table {
 	table-layout: fixed;
-	border-spacing: 1px;
-	background-image: url("main.png");
+	border-spacing: 0px;
 	background-position: center;
 }
 
 .clear {
-	background-image: none;
+	background-image: url("main.png");
 }
 
 .cross {
@@ -31,10 +39,27 @@ table {
 	top: 20px;
 	width: 100px;
 	height: 40px;
-	font-family: "Open Sans";
+	font-family: "Arial";
 }
 
-p {
-	font-family: "Open Sans";
-	font-size: 16pt;
+.head {
+	position: relative;
+	top: 20pt;
+	font-family: dooml;
+	font-size: 70pt;
+	color:#FFFFFF;
+}
+
+.uhead {
+	font-family: doomr;
+	font-size: 40pt;
+	color:#FFFFFF;
+}
+
+body {
+	background-image: url("back.jpg");
+	background-repeat: no-repeat;
+	background-position: center; 
+	background-size: cover;
+	background-attachment: fixed;
 }
