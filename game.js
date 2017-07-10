@@ -1,6 +1,7 @@
-clickable = true
 array = [ [0, 0, 0], [0, 0, 0], [0, 0, 0] ]
 available = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+can_restart = true
+clickable = true
 
 function check_win(id) {
 
@@ -92,17 +93,17 @@ function put_round() {
 			alert("You Lose")
 			console.log("Rounds Winners")
 
+
 		}, 100)
 
-		can_restart = true
 		return
 	}
 
+	can_restart = true
 	clickable = true
 
 }
 
-can_restart = true
 $("td").click(function() {
 
 	if (!clickable) {
@@ -204,6 +205,7 @@ $("img").mouseleave(function() {
 
 $("img").click(function() {
 	
+	console.log($(this).attr("id"), can_restart)
 	if ($(this).attr("id") == "12" && can_restart) {
 
 		$("td").attr("class", "clear")
