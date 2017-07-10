@@ -96,6 +96,7 @@ function put_round() {
 
 		}, 100)
 
+		can_restart = true
 		return
 	}
 
